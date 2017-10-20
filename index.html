@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="keywords" content="this is keywords">
+    <meta name="description" content="this is description">
+    <link type="text/css" rel="stylesheet" href="Content/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="Content/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="Content/css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="Content/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="Content/css/common.css">
+    <link type="text/css" rel="stylesheet" href="Content/css/style.css">
+</head>
+<body ng-app="myApp">
+<header class="header">
+    <main id="nav">
+        <span class="on">
+            <a ng-href="#/home">服务</a>
+        </span>
+        <span>
+            <a ng-href="#/banking">金融</a>
+        </span>
+    </main>
+    <div><i class="fa fa-search"></i></div>
+</header>
+<section class="section">
+    <ui-view></ui-view>
+</section>
+<footer class="footer">
+    <a href="#">
+        <i class="fa fa-home"></i>
+        <span>首页</span>
+    </a>
+    <a href="#">
+        <i class="fa fa-newspaper-o"></i>
+        <span>论坛</span>
+    </a>
+    <a href="#">
+        <i class="fa fa-automobile"></i>
+        <span>选车</span>
+    </a>
+    <a href="#">
+        <i class="fa fa-street-view"></i>
+        <span>发现</span>
+    </a>
+    <a href="#">
+        <i class="fa fa-user-circle"></i>
+        <span>未登录</span>
+    </a>
+</footer>
+<script type="text/javascript" src="Script/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="Script/iscroll/iscroll.js"></script>
+
+<script type="text/javascript" src="Script/angular/angular.min.js"></script>
+<script type="text/javascript" src="Script/angular/angular-ui-router.js"></script>
+<script type="text/javascript" src="App/app.js"></script>
+<script type="text/javascript" src="App/Server/ajaxServer.js"></script>
+<script type="text/javascript" src="App/Server/homeServer.js"></script>
+<script type="text/javascript" src="App/Controller/homeController.js"></script>
+<script type="text/javascript" src="App/Directive/homeDriective.js"></script>
+<script type="text/javascript">
+    var nav = document.getElementById('nav');
+    var spans = nav.getElementsByTagName('span');
+    for(var i=0;i<spans.length;i++){
+        spans[i].onclick = function(){
+            for(var i=0;i<spans.length;i++){
+                spans[i].className = '';
+            }
+            this.className = 'on';
+        }
+    };
+</script>
+</body>
+</html>
